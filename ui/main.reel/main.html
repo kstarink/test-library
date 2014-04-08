@@ -2,21 +2,145 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Main</title>
-
+    <title>
+        Main
+    </title>
     <link rel="stylesheet" href="main.css">
-
     <script type="text/montage-serialization">
-        {
-            "owner": {
-                "properties": {
-                    "element": {"#": "main"}
-                }
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "main"}
+            }
+        },
+        "button": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "button"},
+                "enabled": true,
+                "label": "Button"
+            }
+        },
+        "image": {
+            "prototype": "digit/ui/image.reel",
+            "properties": {
+                "element": {"#": "image"},
+                "crossOrigin": null
+            }
+        },
+        "list": {
+            "prototype": "digit/ui/list.reel",
+            "properties": {
+                "element": {"#": "list"}
+            }
+        },
+        "listItem": {
+            "prototype": "digit/ui/list-item.reel",
+            "properties": {
+                "element": {"#": "listItem"}
+            }
+        },
+        "number": {
+            "prototype": "digit/ui/number-field.reel",
+            "properties": {
+                "element": {"#": "number"},
+                "value": 100
+            }
+        },
+        "radio": {
+            "prototype": "digit/ui/radio-button.reel",
+            "properties": {
+                "element": {"#": "radio"},
+                "checked": true
+            }
+        },
+        "radioButtonController": {
+            "prototype": "montage/core/radio-button-controller"
+        },
+        "select": {
+            "prototype": "digit/ui/select.reel",
+            "properties": {
+                "element": {"#": "select"}
+            }
+        },
+        "slider": {
+            "prototype": "digit/ui/slider.reel",
+            "properties": {
+                "element": {"#": "slider"},
+                "axis": "horizontal",
+                "max": 100,
+                "min": 0,
+                "value": 50
+            }
+        },
+        "slot": {
+            "prototype": "montage/ui/slot.reel",
+            "properties": {
+                "element": {"#": "slot"}
+            }
+        },
+        "text": {
+            "prototype": "digit/ui/text.reel",
+            "properties": {
+                "element": {"#": "text"},
+                "value": "Text"
+            }
+        },
+        "textArea": {
+            "prototype": "digit/ui/text-area.reel",
+            "properties": {
+                "element": {"#": "textArea"},
+                "value": "Text"
+            }
+        },
+        "textField": {
+            "prototype": "digit/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField"},
+                "placeholderValue": "Text"
+            }
+        },
+        "title": {
+            "prototype": "digit/ui/title.reel",
+            "properties": {
+                "element": {"#": "title"},
+                "value": "Title"
             }
         }
+    }
     </script>
 </head>
 <body>
-    <div data-montage-id="main" data-montage-skin="light" class="Main"></div>
+    <div data-montage-id="main" data-montage-skin="light" class="Main">
+        <h1 data-montage-id="title">
+            <input data-montage-id="textField" type="text">
+                <textarea data-montage-id="textArea">
+                    <p data-montage-id="text">
+                        <div data-montage-id="slider">
+                            <select data-montage-id="select">
+                                <div data-montage-id="slot"></div>
+                                <option value="">
+                                    Select
+                                    <input type="radio" data-montage-id="radio">
+                                    <input type="number" data-montage-id="number">
+                                        <ul data-montage-id="list">
+                                            <li>
+                                                Item
+                                            </li>
+                                        </ul>
+                                        <li data-montage-id="listItem">
+                                            <img data-montage-id="image">
+                                                <button data-montage-id="button"></button>
+                                            </img>
+                                        </li>
+                                    </input>
+                                </option>
+                            </select>
+                        </div>
+                    </p>
+                </textarea>
+            </input>
+        </h1>
+    </div>
 </body>
 </html>
